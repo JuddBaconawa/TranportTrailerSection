@@ -1,0 +1,16 @@
+.background- {
+    background-color: #1b1b1b;
+    opacity: 5%;
+    width: 1366px;
+    height: 884px;
+
+}
+
+img {
+    width: 607px;
+    height: 238px;
+    border-radius: 12px;
+    padding: 32px 24px 32px 24px;
+    gap: 22px;
+
+}
