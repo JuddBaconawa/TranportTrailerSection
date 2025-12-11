@@ -1,16 +1,120 @@
-.background- {
-    background-color: #1b1b1b;
-    opacity: 5%;
-    width: 1366px;
-    height: 884px;
-
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  position: relative;
 }
 
-img {
-    width: 607px;
-    height: 238px;
-    border-radius: 12px;
-    padding: 32px 24px 32px 24px;
-    gap: 22px;
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin: 60px 0;
+}
 
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: black;
+}
+
+/* ===== TRAILERS WRAPPER ===== */
+.trailers {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 80px;
+}
+
+/* ===== ROWS OF CARDS ===== */
+.content-top-card,
+.content-bottom-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ===== INDIVIDUAL CARD FRAME ===== */
+.top-left, .top-right,
+.bottom-left, .bottom-right {
+  width: 48%;
+  position: relative;                  /* reference for text overlay */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.top-left:hover, .top-right:hover,
+.bottom-left:hover, .bottom-right:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== CARD IMAGE ===== */
+.top-left img, .top-right img,
+.bottom-left img, .bottom-right img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;                     /* removes white space below image */
+  border-radius: 12px 12px 0 0;
+}
+
+/* ===== TEXT OVER IMAGE ===== */
+.text-content {
+  position: absolute;                  /* overlay text */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;             /* vertical centering */
+  align-items: center;                 /* horizontal centering */
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);        /* optional semi-transparent overlay */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text-content h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.text-content h4 {
+  font-size: 1rem;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  color: #ffdd00;                     /* yellow stat title */
+  font-weight: 600;
+}
+
+.text-content p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .top-left, .top-right,
+  .bottom-left, .bottom-right {
+    width: 100%;
+  }
+
+  .content-top-card,
+  .content-bottom-card {
+    flex-direction: column;
+  }
 }
